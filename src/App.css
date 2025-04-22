@@ -1,66 +1,68 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-body {
+/* Ensure the body and html take full height */
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%; /* Full height */
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
-	margin: 0;
-	background-color: #f0f0f0;
+	background-color: #f4f4f4; /* Light background for the page */
   }
   
-  .loader {
-	border: 16px solid #f3f3f3; /* Light gray */
-	border-top: 16px solid #3498db; /* Blue */
-	border-radius: 50%;
-	width: 80px;
-	height: 80px;
-	animation: spin 2s linear infinite;
+  /* Style for the entire cards container */
+  .cards {
+	display: flex;
+	flex-wrap: wrap; /* Allow cards to wrap into rows */
+	justify-content: space-evenly; /* Space between cards */
+	gap: 20px; /* Space between cards */
+	padding: 20px;
+	width: 80%; /* 80% of the container width */
+	max-width: 1200px; /* Limit the container width */
+	height: auto; /* Allow for flexible height */
+	max-height: 80vh; /* Limit height to 80% of the viewport height */
+	overflow-y: auto; /* Add scroll if the content exceeds the max height */
   }
   
-  @keyframes spin {
-	0% { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
+  /* Style for individual card */
+  .card {
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	width: 300px; /* Fixed width for each card */
+	height: 400px; /* Fixed height for each card */
+	text-align: center;
+	padding: 20px;
+	box-sizing: border-box;
+	flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  /* Hover effect for the card */
+  .card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image inside the card */
+  .card img {
+	width: 100%;
+	height: 200px; /* Fixed height for image */
+	object-fit: cover;
+	border-radius: 10px;
+  }
+  
+  /* Title style */
+  .card h2 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin: 15px 0;
+  }
+  
+  /* Description style */
+  .card p {
+	font-size: 1rem;
+	color: #555;
+	margin: 10px 0;
   }
   
